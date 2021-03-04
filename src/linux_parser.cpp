@@ -241,7 +241,7 @@ float LinuxParser::CpuUtilization(int pid) {
   string line;
   long utiltime;
   long elapsedtime;
-  const long uptime = UpTime();
+  const long uptime = Jiffies();
   float result{0};
   std::ifstream stream(kProcDirectory + to_string(pid) + kStatFilename);
   if (stream.is_open()){
